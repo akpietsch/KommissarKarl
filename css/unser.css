@@ -38,7 +38,7 @@ html, body {
 
 .bubble_container {
 		display:inline-block;
-		width: 60%;		
+		width: 70%;		
 		padding: 2%;
 		border-radius: 4em;
 		background:#902c2f;
@@ -63,6 +63,7 @@ html, body {
 	left: 0;
 	padding: 0 !important;
 }
+
 
 #map {
 	height: 100%;
