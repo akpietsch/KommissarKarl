@@ -85,7 +85,7 @@ $(document).on('pagebeforecreate', '#map-page', function() {
 
 
 	var spqrIcon = L.icon({
-		 iconUrl: 'img/axt.svg',
+		 iconUrl: 'img/axe.svg',
 
 		 iconSize:     [38, 95], // size of the icon
 		 iconAnchor:   [3, 87], // point of the icon which will correspond to marker's location
