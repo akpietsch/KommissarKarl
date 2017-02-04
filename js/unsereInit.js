@@ -23,6 +23,33 @@ $(document).on('pagebeforecreate', '#map-page', function() {
 
 
 	}
+	
+	$(document).on('pagebeforecreate', '#map-page', function() {
+		if (getValue('intro') != 1) {
+			$(':mobile-pagecontainer').pagecontainer('change', '#intro-page1');
+			setValue('intro', 1);
+		}
+
+	});
+
+	$(document).ready(function(){
+		$('#note-button').click(function(){
+	         var notes1 = $('#notiz1').val();
+	         var notes2 = $('#notiz2').val();
+	         var notes3 = $('#notiz3').val();
+	         var notes4 = $('#notiz4').val();
+	         var notes5 = $('#notiz5').val();
+	         var notes6 = $('#notiz6').val();
+	         var notes7 = $('#notiz7').val();
+	         $("#note-one").text(notes1);
+	         $('#note-two').text(notes2);
+	         $("#note-three").text(notes3);
+	         $('#note-four').text(notes4);
+	         $("#note-five").text(notes5);
+	         $('#note-six').text(notes6);
+	         $("#note-seven").text(notes7);
+		});
+	});
 
 /*********MAP*********/
 

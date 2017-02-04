@@ -118,8 +118,14 @@
 
 
 		<div data-role="header" id="map-page-header">
-			<a href="#eye-panel" data-icon="eye" data-iconpos="notext"
-				data-role="button"></a>
+			<ul>
+
+				<li><a href="#eye-panel" data-role="button" data-icon="eye"
+					data-theme="a" data-transition="slide"></a></li>
+				<li><a href="#note-panel" id="note-button" data-role="button"
+					data-icon="bullets" data-transition="slide" data-theme="a"
+					data-transition="slide"></a></li>
+			</ul>
 		</div>
 
 		<div data-role="content">
@@ -135,9 +141,6 @@
 			</div>
 		</div>
 
-		<!-- 	<a href="#location-page" data-role="button" data-icon="search"
-					data-theme="a" data-transition="turn">weiter</a> -->
-
 		<div data-role="panel" id="eye-panel" data-position="left"
 			data-theme="a">
 			<h3>Was soll ich tun?</h3>
@@ -152,13 +155,33 @@
 				data-theme="b" data-rel="close" data-iconpos="right">Ok,
 				verstanden!</a>
 		</div>
+
+		<div data-role="panel" id="note-panel" data-position="right"
+			data-theme="a">
+
+			<h3>Notizblock</h3>
+			<div id="notes">
+				<ul data-role="listview">
+					<li id="note-one"></li>
+					<li id="note-two"></li>
+					<li id="note-three"></li>
+					<li id="note-four"></li>
+					<li id="note-five"></li>
+					<li id="note-six"></li>
+					<li id="note-seven"></li>
+				</ul>
+			</div>
+
+			<a href="#map-page" data-role="button" data-icon="delete"
+				data-theme="b" data-rel="close" data-iconpos="right">zurück</a>
+		</div>
 	</div>
 
 	<!-- LOCATION PAGES -->
 	<!-- 1-->
 	<div data-role="page" id="location-page" data-theme="a">
 		<div class="page-img-container">
-			<img class="location-img" src="img/rennofen.jpg">
+			<img class="location-img" src="img/Rennofen.jpg">
 		</div>
 		<div class="content" data-role="content">
 			<div class="information-container">
@@ -221,7 +244,7 @@
 	<div data-role="page" id="location-page2" data-theme="a">
 
 		<div class="page-img-container">
-			<img class="location-img" src="img/rennofen.jpg">
+			<img class="location-img" src="img/Rennofen.jpg">
 		</div>
 		<div class="text-wrapper">
 			<div class="text-container" data-theme="a">
@@ -249,7 +272,7 @@
 	<div data-role="page" id="location-page3" data-theme="a">
 
 		<div class="page-img-container">
-			<img class="location-img" src="img/rennofen.jpg">
+			<img class="location-img" src="img/Rennofen.jpg">
 		</div>
 		<div class="text-wrapper">
 			<div class="text-container" data-theme="a">
@@ -265,61 +288,81 @@
 				<ul>
 					<li><a href="#location-page2" data-role="button"
 						data-icon="carat-l" data-theme="a" data-transition="slide">Zurück</a></li>
-					<li><a href="#outro-page1" data-role="button"
-						data-icon="search" data-theme="a">Täter finden</a></li>
+					<li><a href="#notizen1" data-role="button"
+						data-icon="search" data-theme="a">Notizblock</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- NOTIZEN1 -->
+	<div data-role="page" id="notizen1" data-theme="a">
+
+		<h2>Machen Sie sich Notizen, Herr Kommissar!</h2>
+
+		<div class="text-wrapper">
+			<input type="text" id="notiz1">
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#map-page" data-role="button"
+						data-icon="navigation" data-theme="a" data-transition="slide">Zurück</a></li>
+					<li><a href="#outro-page1"" data-role="button"
+						data-icon="navigation" data-theme="a">Karte</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 
 
-	<!--  3 -->
+	<!--  WHO'S THE MURDER -->
 	<div data-role="page" id="outro-page1" data-theme="a">
 
 
-		<div class="page-img-container" >
+		<div class="page-img-container">
 
-			
+
 			<table>
 				<tr>
 					<th><a href="#sieg-page"> <img class="taeter-img"
 							src="img/Personen/plötschcke.jpg" id="imgPlötschcke">
 					</a></th>
 
-					<th><img class="taeter-img"
-						src="img/Personen/priester.jpg" id="imgPriester"
+					<th><img class="taeter-img" src="img/Personen/priester.jpg"
+						id="imgPriester"
 						onclick="document.getElementById('imgPriester').src='img/Personen/fail.jpg'">
 					</th>
 				</tr>
 				<tr>
-					<th><img class="taeter-img"
-						src="img/Personen/junge.jpg" id="imgJunge"
+					<th><img class="taeter-img" src="img/Personen/junge.jpg"
+						id="imgJunge"
 						onclick="document.getElementById('imgJunge').src='img/Personen/fail.jpg'">
 					</th>
 
-					<th><img class="taeter-img"
-						src="img/Personen/schwagerin.jpg" id="imgSchwagerin"
+					<th><img class="taeter-img" src="img/Personen/schwagerin.jpg"
+						id="imgSchwagerin"
 						onclick="document.getElementById('imgSchwagerin').src='img/Personen/fail.jpg'">
 					</th>
 				</tr>
 				<tr>
-					<th><img class="taeter-img"
-						src="img/Personen/mutter.jpg" id="imgMutter"
+					<th><img class="taeter-img" src="img/Personen/mutter.jpg"
+						id="imgMutter"
 						onclick="document.getElementById('imgMutter').src='img/Personen/fail.jpg'">
 					</th>
 
-					<th><img class="taeter-img"
-						src="img/Personen/alteFrau.jpg" id="imgAlteFrau"
+					<th><img class="taeter-img" src="img/Personen/alteFrau.jpg"
+						id="imgAlteFrau"
 						onclick="document.getElementById('imgAlteFrau').src='img/Personen/fail.jpg'">
 					</th>
 				</tr>
 				<tr>
-					<th><img  class="taeter-img"
-						src="img/Personen/wirt.jpg" id="imgWirt"
+					<th><img class="taeter-img" src="img/Personen/wirt.jpg"
+						id="imgWirt"
 						onclick="document.getElementById('imgWirt').src='img/Personen/fail.jpg'"></th>
 
-					<th><img  class="taeter-img"
-						src="img/Personen/gartner.jpg" id="imgGartner"
+					<th><img class="taeter-img" src="img/Personen/gartner.jpg"
+						id="imgGartner"
 						onclick="document.getElementById('imgGartner').src='img/Personen/fail.jpg'">
 					</th>
 				</tr>
@@ -341,7 +384,7 @@
 
 
 	</div>
-	
+
 
 	<div data-role="page" id="sieg-page" data-theme="a">
 		<div data-role="header" data-position="fixed">
@@ -376,31 +419,31 @@
 
 
 	<script type="text/javascript">
-	
-/*     var counter = 0;
-    $(function() {
-       $('.taeter-img').click(function(){
-    	   counter++;
-    	   if(counter > 2) {
-    		   $('outro-page1').document.location.href="#sieg-page";
-    	   }
-       });
-    })();
-        */
-	
- 	 var counter = 0;
-    $(function() {
-       $('.taeter-img').click(function() {
-           counter++;
-           // point to google after 3 clicks
-           if(counter == 3) {
-              alert( 'Du hast zu viele Versuche gebraucht. Der Täter ist entkommen!');
-           }
-       });
-    });  
-	
-	
- 	 /*  //Click Counter Täterauswahl
+		/*     var counter = 0;
+		 $(function() {
+		 $('.taeter-img').click(function(){
+		 counter++;
+		 if(counter > 2) {
+		 $('outro-page1').document.location.href="#sieg-page";
+		 }
+		 });
+		 })();
+		 */
+
+		var counter = 0;
+		$(function() {
+			$('.taeter-img')
+					.click(
+							function() {
+								counter++;
+								// point to google after 3 clicks
+								if (counter == 3) {
+									alert('Du hast zu viele Versuche gebraucht. Der Täter ist entkommen!');
+								}
+							});
+		});
+
+		/*  //Click Counter Täterauswahl
 		var ClickCounterViewModel = function() {
 			this.numberOfClicks = ko.observable(0);
 
@@ -415,9 +458,8 @@
 		}; 
 
 		ko.applyBindings(new ClickCounterViewModel());  */
-		
-	//Map
 
+		//Map
 		$(document).on('pageshow', '#map-page', function() {
 			recalculateMapSize();
 		});
@@ -425,7 +467,7 @@
 		function recalculateMapSize() {
 			$(window).resize();
 			map.invalidateSize(false);
-		} 
+		}
 	</script>
 </body>
 </html>
