@@ -7,11 +7,13 @@ var smallWidth = false; //bool to indicate mobile device
 $(window).load(function() {
 
 	$('.location-img').height($(window).height() / 2);
+	$('.taeter-img').height($(window).height() / 4.5);
 
 });
 
 $(window).on('resize', function() {
 	$('.location-img').height($(window).height() / 2);
+	$('.taeter-img').height($(window).height() / 4.5);
 });
 
 
