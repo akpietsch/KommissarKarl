@@ -118,16 +118,16 @@
 
 
 		<div data-role="header" id="map-page-header">
-		<div data-role="navbar">
+			<div data-role="navbar">
 				<ul>
-				<li><a href="#eye-panel" data-role="button" data-icon="eye"
-					data-theme="a" data-transition="slide"></a></li>
-				<li><a href="#note-panel" id="note-button" data-role="button"
-					data-icon="bullets" data-transition="slide" data-theme="a"
-					data-transition="slide"></a></li>
+					<li><a href="#eye-panel" data-role="button" data-icon="eye"
+						data-theme="a" data-transition="slide"></a></li>
+					<li><a href="#note-panel" id="note-button" data-role="button"
+						data-icon="bullets" data-transition="slide" data-theme="a"
+						data-transition="slide"></a></li>
 				</ul>
 			</div>
-			
+
 		</div>
 
 		<div data-role="content">
@@ -321,50 +321,62 @@
 	<!--  WHO'S THE MURDER -->
 	<div data-role="page" id="outro-page1" data-theme="a">
 		<div class="page-img-container">
-			<table>
-				<tr>
-					<th><a href="#sieg-page"> <img class="taeter-img"
-							src="img/Personen/plötschcke.jpg" id="imgPlötschcke">
-					</a></th>
 
-					<th><img class="taeter-img" src="img/Personen/priester.jpg"
-						id="imgPriester"
-						onclick="document.getElementById('imgPriester').src='img/Personen/fail.jpg'">
-					</th>
-				</tr>
-				<tr>
-					<th><img class="taeter-img" src="img/Personen/junge.jpg"
-						id="imgJunge"
-						onclick="document.getElementById('imgJunge').src='img/Personen/fail.jpg'">
-					</th>
-
-					<th><img class="taeter-img" src="img/Personen/schwagerin.jpg"
-						id="imgSchwagerin"
-						onclick="document.getElementById('imgSchwagerin').src='img/Personen/fail.jpg'">
-					</th>
-				</tr>
-				<tr>
-					<th><img class="taeter-img" src="img/Personen/mutter.jpg"
-						id="imgMutter"
-						onclick="document.getElementById('imgMutter').src='img/Personen/fail.jpg'">
-					</th>
-
-					<th><img class="taeter-img" src="img/Personen/alteFrau.jpg"
-						id="imgAlteFrau"
-						onclick="document.getElementById('imgAlteFrau').src='img/Personen/fail.jpg'">
-					</th>
-				</tr>
-				<tr>
-					<th><img class="taeter-img" src="img/Personen/wirt.jpg"
-						id="imgWirt"
-						onclick="document.getElementById('imgWirt').src='img/Personen/fail.jpg'"></th>
-
-					<th><img class="taeter-img" src="img/Personen/gartner.jpg"
-						id="imgGartner"
-						onclick="document.getElementById('imgGartner').src='img/Personen/fail.jpg'">
-					</th>
-				</tr>
-			</table>
+			<div class="ui-grid-b">
+				<div class="ui-block-a">
+					<div class="ui-bar ui-bar-a" style="height: 60px">
+						<a href="#sieg-page"> <img class="taeter-img"
+							src="img/Personen/plötschcke.jpg" id="imgPlötschcke"></a>
+					</div>
+				</div>
+				<div class="ui-block-b">
+					<div class="ui-bar ui-bar-a" style="height: 60px">
+						<img class="taeter-img" src="img/Personen/priester.jpg"
+							id="imgPriester"
+							onclick="document.getElementById('imgPriester').src='img/Personen/fail.jpg'">
+					</div>
+				</div>
+				<div class="ui-block-a">
+					<div class="ui-bar ui-bar-a" style="height: 60px">
+						<img class="taeter-img" src="img/Personen/junge.jpg" id="imgJunge"
+							onclick="document.getElementById('imgJunge').src='img/Personen/fail.jpg'">
+					</div>
+				</div>
+				<div class="ui-block-b">
+					<div class="ui-bar ui-bar-a" style="height: 60px">
+						<img class="taeter-img" src="img/Personen/schwagerin.jpg"
+							id="imgSchwagerin"
+							onclick="document.getElementById('imgSchwagerin').src='img/Personen/fail.jpg'">
+					</div>
+				</div>
+				<div class="ui-block-a">
+					<div class="ui-bar ui-bar-a" style="height: 60px">
+						<img class="taeter-img" src="img/Personen/mutter.jpg"
+							id="imgMutter"
+							onclick="document.getElementById('imgMutter').src='img/Personen/fail.jpg'">
+					</div>
+				</div>
+				<div class="ui-block-b">
+					<div class="ui-bar ui-bar-a" style="height: 60px">
+						<img class="taeter-img" src="img/Personen/alteFrau.jpg"
+							id="imgAlteFrau"
+							onclick="document.getElementById('imgAlteFrau').src='img/Personen/fail.jpg'">
+					</div>
+				</div>
+				<div class="ui-block-a">
+					<div class="ui-bar ui-bar-a" style="height: 60px">
+						<img class="taeter-img" src="img/Personen/wirt.jpg" id="imgWirt"
+							onclick="document.getElementById('imgWirt').src='img/Personen/fail.jpg'">
+					</div>
+				</div>
+				<div class="ui-block-b">
+					<div class="ui-bar ui-bar-a" style="height: 60px">
+						<img class="taeter-img" src="img/Personen/gartner.jpg"
+							id="imgGartner"
+							onclick="document.getElementById('imgGartner').src='img/Personen/fail.jpg'">
+					</div>
+				</div>
+			</div>
 
 
 		</div>
@@ -383,7 +395,7 @@
 		<div data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-									<li><a href="#map-page" data-role="button" data-icon="delete"
+					<li><a href="#map-page" data-role="button" data-icon="delete"
 						data-theme="a"></a></li>
 				</ul>
 			</div>
