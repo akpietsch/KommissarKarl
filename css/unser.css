@@ -1,0 +1,157 @@
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+/* Carousel Styling */
+#introPage {
+	/*	display : none;*/
+	background-color: #8A0808;
+	color: white;
+}
+
+.slide1 {
+	height: 500px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.slide2 {
+	height: 500px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.slide3 {
+	height: 500px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.carousel-caption h1 {
+	font-size: 2.4em;
+	font-family: 'Pacifico', cursive;
+	padding-bottom: .4em;
+}
+
+.carousel-caption p {
+	font-size: 2em;
+}
+
+/*locations styling*/
+html, body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.text-wrapper {
+	overflow:hidden;
+
+	
+}
+
+
+.text-container {
+	display:inline-block;
+	display: block;
+	text-align: center;
+	overflow:auto;
+	/*funktioniert nicht mit %-Angaben. Funktioniert es mit touch (beim simulator nicht)*/
+	height:10em;
+	
+}
+
+.page-img-container {
+	display: block;
+	text-align: center;
+}
+
+
+.bubble_container {
+		display:inline-block;
+		width: 60%;		
+		padding: 2%;
+		border-radius: 4em;
+		background:#902c2f;
+	}
+
+/*map sytling
+#map-content{
+	
+    height: 100%;
+    padding: 0px; 
+    margin:0px;
+    z-index: -1;
+   
+}
+#map {
+	height: 100%;
+}
+*/
+
+
+/*game 1: puzzle: https://dhirajkumarsingh.wordpress.com/2013/08/18/creating-puzzle-game-with-jquery/*/
+#game_area {
+	background-color: #ffffff;
+	height: 100%;
+	margin: 2% auto;
+	width: 100%;
+}
+#board div {
+	background: url("img/julius_stand.jpg") no-repeat scroll 0 0 #ffffff;
+	cursor: pointer;
+	height: 100%;
+	line-height: 20%;
+	position: absolute;
+	text-align: center;
+	width: 140px;
+	/* css3 shadow */
+    -moz-box-shadow: inset 0 0 20px #2caae7;
+	-webkit-box-shadow: inset 0 0 20px #2caae7;
+	-ms-box-shadow: inset 0 0 20px #2caae7;
+	-o-box-shadow: inset 0 0 20px #2caae7;
+	box-shadow: inset 0 0 20px #2caae7;
+}
+
+/*Intro-Page*/
+
+.intro-text{
+	margin:5%;
+	padding:1%;
+}
+
+
+<!-- -->
+
+.ui-content {
+	position: absolute;
+	top: 45px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 0 !important;
+}
+
+#map {
+	height: 100%;
+}
+
+.taeter-img {
+	
+	height: 65%;
+	width: 65%;
+}
+
+body.mode{
+	background: lightgreen;
+}
+
+#blut {
+	height: 500px;
+
+}

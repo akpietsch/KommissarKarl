@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi">
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+	$(document).on("mobileinit", function() {
+		$.mobile.hashListeningEnabled = false;
+		$.mobile.pushStateEnabled = false;
+		$.mobile.changePage.defaults.changeHash = false;
+	});
+</script>
+<script
+	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<link rel="stylesheet" href="dist/leaflet.css" />
+<link rel="stylesheet" type="text/css" href="css/unser.css" />
+<link rel="stylesheet" type="text/css" href="css/rot-schwarz.css" />
+
+
+<title>Blutige Abgründe</title>
+</head>
+<body>
+	<!--  INTRO PAGES -->
+	<!-- Intropage-1 -->
+	<div data-role="page" id="intro-page1" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+
+					<li><a href="#map-page" data-role="button" data-icon="delete"
+						data-theme="a"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="intro-text">
+			<h2>Herzlich Willkommen in Nettersheim, Herr Kommissar!</h2>
+			<p>Eine kurze Einführung in die Bedienung des Spiels</p>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#intro-page2" data-role="button"
+						data-icon="carat-r" data-theme="a"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- Intropage-2 -->
+	<div data-role="page" id="intro-page2" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+
+					<li><a href="#map-page" data-role="button" data-icon="delete"
+						data-theme="a"></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="intro-text">
+			<h2>NFC</h2>
+			<p>Frag doch einfach mal Siri um Rat</p>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#intro-page1" data-role="button"
+						data-icon="carat-l" data-theme="a"></a></li>
+					<li><a href="#intro-page3" data-role="button"
+						data-icon="carat-r" data-theme="a"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- Intropage-3 -->
+	<div data-role="page" id="intro-page3" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+
+					<li><a href="#map-page" data-role="button" data-icon="delete"
+						data-theme="a"></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="intro-text">
+			<h2>Herr Kommissar, soeben traf eine Nachricht für Sie ein</h2>
+			<p>Jetzt aber schnell los, um den Mörder zu fassen und weitere
+				Morde zu verhindern!</p>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#intro-page2" data-role="button"
+						data-icon="carat-l" data-theme="a"></a></li>
+					<li><a href="#map-page" data-role="button" data-icon="check"
+						data-theme="a"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- MAP PAGE -->
+	<div data-role="page" id="map-page" data-theme="b">
+
+
+		<div data-role="header" id="map-page-header">
+			<a href="#eye-panel" data-icon="eye" data-iconpos="notext"
+				data-role="button"></a>
+		</div>
+
+		<div data-role="content">
+			<div id="map"></div>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#location-page" data-role="button"
+						data-icon="carat-r" data-theme="a" data-transition="turn"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 	<a href="#location-page" data-role="button" data-icon="search"
+					data-theme="a" data-transition="turn">weiter</a> -->
+
+		<div data-role="panel" id="eye-panel" data-position="left"
+			data-theme="a">
+			<h3>Was soll ich tun?</h3>
+			<p>
+				Der Mörder beobachtet dich möglicherweise... Also sieh zu, dass du
+				an alle angegebenen Orte gehst, und dein Handy an das NFC-Feld
+				hälst. Sammele dann Indizien für den dort begangenen Mord, in dem du
+				das dortige Rätsel (<span class="ui-btn-icon-left ui-icon-search"
+					style="position: relative" data-theme="a"></span>) löst.
+			</p>
+			<a href="#map-page" data-role="button" data-icon="delete"
+				data-theme="b" data-rel="close" data-iconpos="right">Ok,
+				verstanden!</a>
+		</div>
+	</div>
+
+	<!-- LOCATION PAGES -->
+	<!-- 1-->
+	<div data-role="page" id="location-page" data-theme="a">
+		<div class="page-img-container">
+			<img class="location-img" src="img/rennofen.jpg">
+		</div>
+		<div class="content" data-role="content">
+			<div class="information-container">
+
+				<a href="#info-panel-rennofen" data-role="button" data-icon="info"
+					data-theme="a" data-iconpos="right"> <span
+					class="ui-btn-icon-left ui-icon-location"
+					style="position: relative" data-theme="a"></span>Rennofen
+				</a>
+			</div>
+			<div class="text-wrapper">
+				<div class="text-container" data-theme="a">
+					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+						diam nonumy eirmod tempor invidunt ut labore et dolore magna
+						aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+						duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+						takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+						sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+						tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+						voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+						Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+						dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing
+						elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+						magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+						justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+						takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+						sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+						tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+						voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+						Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+						dolor sit amet</p>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#map-page" data-role="button" data-icon="carat-l"
+						data-theme="a" data-transition="slide"></a></li>
+					<li><a href="#location-page2" data-role="button"
+						data-icon="carat-r" data-transition="slide" data-theme="a"
+						data-transition="slide"></a></li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="panel" id="info-panel-rennofen" data-position="right"
+			data-theme="b">
+			<h3>Rennofen</h3>
+			<p>In der römischen Siedlung wurde über einen längeren Zeitraum
+				intensiv Eisen verhüttet. Dafür wurden Öfen aus Lehm, sogenannte
+				Rennöfen, errichtet, die mit Eisenerz und Holzkohle befüllt und ein
+				bis zwei Tage lang befeuert wurden. Als Ergebnis erhielt man
+				Schlacke mit Eisen, das vom Schmied herausgearbeitet werden konnte.</p>
+			<a href="#location-page" data-role="button" data-icon="delete"
+				data-theme="b" data-rel="close" data-iconpos="right"></a>
+		</div>
+	</div>
+
+	<!--  2 -->
+	<div data-role="page" id="location-page2" data-theme="a">
+
+		<div class="page-img-container">
+			<img class="location-img" src="img/rennofen.jpg">
+		</div>
+		<div class="text-wrapper">
+			<div class="text-container" data-theme="a">
+				<div class="bubble_container ">
+					<p>"Lalala lala lalalal alalala lalalal alala Lalalal
+						alalalalala lalalal alalalalala Lalalalal alalalalala lalalal
+						alalal alaLal lalalal "</p>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#location-page" data-role="button"
+						data-icon="carat-l" data-theme="a" data-transition="slide"></a></li>
+					<li><a href="#location-page3" data-role="button"
+						data-icon="carat-r" data-theme="a" data-transition="silde"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<!--  3 -->
+	<div data-role="page" id="location-page3" data-theme="a">
+
+		<div class="page-img-container">
+			<img class="location-img" src="img/rennofen.jpg">
+		</div>
+		<div class="text-wrapper">
+			<div class="text-container" data-theme="a">
+				<div class="bubble_container ">
+					<p>"Lalala lala lalalal alalala lalalal alala Lalalal
+						alalalalala lalalal alalalalala Lalalalal alalalalala lalalal
+						alalal alaLal lalalal "</p>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#location-page2" data-role="button"
+						data-icon="carat-l" data-theme="a" data-transition="slide">Zurück</a></li>
+					<li><a href="#outro-page1" data-role="button"
+						data-icon="search" data-theme="a">Täter finden</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<!--  3 -->
+	<div data-role="page" id="outro-page1" data-theme="a">
+
+
+		<div class="page-img-container" >
+
+			
+			<table>
+				<tr>
+					<th><a href="#sieg-page"> <img class="taeter-img"
+							src="img/Personen/plötschcke.jpg" id="imgPlötschcke">
+					</a></th>
+
+					<th><img class="taeter-img"
+						src="img/Personen/priester.jpg" id="imgPriester"
+						onclick="document.getElementById('imgPriester').src='img/Personen/fail.jpg'">
+					</th>
+				</tr>
+				<tr>
+					<th><img class="taeter-img"
+						src="img/Personen/junge.jpg" id="imgJunge"
+						onclick="document.getElementById('imgJunge').src='img/Personen/fail.jpg'">
+					</th>
+
+					<th><img class="taeter-img"
+						src="img/Personen/schwagerin.jpg" id="imgSchwagerin"
+						onclick="document.getElementById('imgSchwagerin').src='img/Personen/fail.jpg'">
+					</th>
+				</tr>
+				<tr>
+					<th><img class="taeter-img"
+						src="img/Personen/mutter.jpg" id="imgMutter"
+						onclick="document.getElementById('imgMutter').src='img/Personen/fail.jpg'">
+					</th>
+
+					<th><img class="taeter-img"
+						src="img/Personen/alteFrau.jpg" id="imgAlteFrau"
+						onclick="document.getElementById('imgAlteFrau').src='img/Personen/fail.jpg'">
+					</th>
+				</tr>
+				<tr>
+					<th><img  class="taeter-img"
+						src="img/Personen/wirt.jpg" id="imgWirt"
+						onclick="document.getElementById('imgWirt').src='img/Personen/fail.jpg'"></th>
+
+					<th><img  class="taeter-img"
+						src="img/Personen/gartner.jpg" id="imgGartner"
+						onclick="document.getElementById('imgGartner').src='img/Personen/fail.jpg'">
+					</th>
+				</tr>
+			</table>
+
+
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a data-role="button" data-theme="a"> Finde den Täter.
+							<br> Wähle weise, du hast nur drei Versuche
+					</a></li>
+
+				</ul>
+			</div>
+		</div>
+
+
+	</div>
+	
+
+	<div data-role="page" id="sieg-page" data-theme="a">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+
+					<li><a href="#map-page" data-role="button" data-icon="delete"
+						data-theme="a"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="intro-text">
+			<h2>Richtig!</h2>
+			<p>Der Täter war die ganze Zeit dein Kollege Plötschcke</p>
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+	<script src="dist/leaflet.js"></script>
+	<script src='dist/knockout-3.2.0.js'></script>
+	<script src="js/unsereGeojson.js"></script>
+	<script src="js/unsereFunctions.js"></script>
+	<script src="js/unsereInit.js"></script>
+	<script src='dist/knockout-3.2.0.js'></script>
+
+
+	<script type="text/javascript">
+	
+/*     var counter = 0;
+    $(function() {
+       $('.taeter-img').click(function(){
+    	   counter++;
+    	   if(counter > 2) {
+    		   $('outro-page1').document.location.href="#sieg-page";
+    	   }
+       });
+    })();
+        */
+	
+ 	 var counter = 0;
+    $(function() {
+       $('.taeter-img').click(function() {
+           counter++;
+           // point to google after 3 clicks
+           if(counter == 3) {
+              alert( 'Du hast zu viele Versuche gebraucht. Der Täter ist entkommen!');
+           }
+       });
+    });  
+	
+	
+ 	 /*  //Click Counter Täterauswahl
+		var ClickCounterViewModel = function() {
+			this.numberOfClicks = ko.observable(0);
+
+			this.registerClick = function() {
+				this.numberOfClicks(this.numberOfClicks() + 1);
+			};
+
+			this.hasClickedTooManyTimes = ko.computed(function() {
+				return this.numberOfClicks() >= 3;
+			}, this);
+			
+		}; 
+
+		ko.applyBindings(new ClickCounterViewModel());  */
+		
+	//Map
+
+		$(document).on('pageshow', '#map-page', function() {
+			recalculateMapSize();
+		});
+
+		function recalculateMapSize() {
+			$(window).resize();
+			map.invalidateSize(false);
+		} 
+	</script>
+</body>
+</html>

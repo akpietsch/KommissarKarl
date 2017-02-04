@@ -1,39 +1,16 @@
 var questions = [
 {
 	'object': "nordtor",
-	'intro':'Nach einer langen und beschwerlichen Reise kommst du am Nordtor an. Noch bevor du die Stadt betrittst, überrumpelt dein Bekannter Gaius Publius dich mit einer Frage:',
-	'outro':'Nachdem du ihm die Fragen beantwortet hast, zeigt er dir auch den Rest der Befestigungsanlagen seiner Stadt.',
+	'intro':'Willkommen im Archäologischen Landschaftspark in Nettersheim',
+	'outro':'Gehe zu dem nächsten Punkt',
 	"quests": [
 {
-			"text": "Wann wurde das Nordtor errichtet?",
+			"text": "Einführung in das Spiel: <br> bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla ",
 			"type": "mc",
 			"answers": [
-				{	"text": "2. JH n. Chr.",
-					"correct": true			},
-				{	"text": "1. JH v. Chr.",
-					"correct": false			},
-				{	"text": "3. JH n. Chr.",
-					"correct": false			}
+				{	"text": "Verstanden",
+					"correct": true			}
 			]
-		},{
-			"text": "Nenne den Namen des bekannten Stadttores von Trier!",
-			"type": "input",
-			"answer": "Porta Nigra"
-		},{
-			"text": "Welche Funktionen hatten Stadttore au&szlig;er der Funktion eines Einlasses?",
-			"type": "mc",
-			"answers": [
-				{	"text": "Zollamt",
-					"correct": false			},
-				{	"text": "Warenkontrolle",
-					"correct": true			},
-				{	"text": "Kultst&auml;tte",
-					"correct": false			}
-			]
-		},{
-			"text": "Nenne den lateinischen Schriftzug des Tores (dazu musst du ins RGM gehen). Gesucht ist die Langform.",
-			"type": "input",
-			"answer": "Colonia Claudia Ara Agrippinensium"
 		}
 	]
 },{

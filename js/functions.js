@@ -139,7 +139,7 @@ function prepareQuiz(q, outro) {
 				.appendTo($gRadioFieldSet);
 		}
 
-		$('<a>',{'data-role':'button'}).text("Check!")
+		$('<a>',{'data-role':'button'}).text("weiter")
 			.click( function(){checkQuiz(outro)}.bind(outro) ).appendTo($gContent);
 		
 		failCount = q.answers.length - 1;
@@ -347,9 +347,8 @@ function popResult(res, localScore, outro) {
 	switch(res){
 		// correct
 		case 0:
-			title = "Yeah!";
-			text = "Herzlichen Glückwunsch! Du hast die Frage richtig beantwortet und "
-						+ localScore + " von " + localMaxScore + " Punkten erzielt!";
+			title = "Super!";
+			text = "Dann auf gehts.. ";
 		
 			$("<p/>", {'text':text}).appendTo($pCon);
 			$("<p/>", {'text':outro}).appendTo($pCon);

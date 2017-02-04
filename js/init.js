@@ -10,7 +10,7 @@ function introduction() {
 
 	$pHead = $('#story-page-header');
 
-	$pHead.append( $('<h2>').html('Willkommen zu "Life of Julius"!') );
+	$pHead.append( $('<h2>').html('Blutige Abgründe!') );
 	$pHead.append( $('<a>',{
 		'data-role':'button',
 		'id':'story-page-skip',
